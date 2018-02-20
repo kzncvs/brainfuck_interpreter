@@ -19,7 +19,7 @@ $output_string = "";
 // Pointer for $data
 $data_pointer = 0;
 
-// Handling brainfuck commands string character by character
+// Handling brainfuck commands from string character by character
 for ($i = 0; $i < strlen($code); $i++) {
     switch ($code[$i]) {
         case '>':
@@ -59,7 +59,7 @@ for ($i = 0; $i < strlen($code); $i++) {
             break;
         case '[':
             if ($brainfuck_array[$array_pointer] == 0) {
-                // Searching for paired bracket in string
+                // Searching for paired brackets in the code string
                 $brackets_counter = 0;
                 while (true) {
                     if ($code[$i] == '[') {
@@ -76,7 +76,7 @@ for ($i = 0; $i < strlen($code); $i++) {
             break;
         case ']':
             if ($brainfuck_array[$array_pointer] != 0) {
-                // Searching for paired bracket in string
+                // Searching for paired brackets in the code string
                 $brackets_counter = 0;
                 while (true) {
                     if ($code[$i] == ']') {
