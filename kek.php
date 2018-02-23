@@ -3,7 +3,10 @@
 $code = '';
 $data = '';
 try {
-    if ($_REQUEST['code'] == '') {
+    if (!isset($_REQUEST['code']) or !isset($_REQUEST['data'])) {
+        throw new Exception("Invalid entry form");
+    }
+     elseif ($_REQUEST['code'] == '') {
         throw new Exception("Code string is empty");
     }
     $code = $_REQUEST['code'];
