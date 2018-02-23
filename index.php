@@ -4,7 +4,7 @@ $code = '';
 $data = '';
 try {
     if ($_REQUEST['code'] == '') {
-        throw new Exception("Empty code string");
+        throw new Exception("Code string is empty");
     }
     $code = $_REQUEST['code'];
     $data = $_REQUEST['data'];
