@@ -6,8 +6,17 @@
 
 <?php
 // Parsing data from request
-$code = $_REQUEST['code'];
-$data = $_REQUEST['data'];
+$code = '';
+$data = '';
+try {
+    if (!isset($_REQUEST['code']) or !isset($_REQUEST['data'])) {
+        throw new Exception("Dict keys arent exist");
+    }
+    $code = $_REQUEST['code'];
+    $data = $_REQUEST['data'];
+} catch (Exception $e) {
+
+}
 
 // Initialising "infinity" array and pointer for it
 $brainfuck_array = [];
