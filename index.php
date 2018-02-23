@@ -1,21 +1,16 @@
-<form action="index.php">
-    Code: <input type="text" name="code" value=""><br/>
-    Data: <input type="text" name="data" value=""><br/>
-    <input type="submit" value="Run">
-</form>
-
 <?php
 // Parsing data from request
 $code = '';
 $data = '';
 try {
-    if (!isset($_REQUEST['code']) or !isset($_REQUEST['data'])) {
-        throw new Exception("Dict keys arent exist");
+    if ($_REQUEST['code'] == '') {
+        throw new Exception("Empty code string");
     }
     $code = $_REQUEST['code'];
     $data = $_REQUEST['data'];
 } catch (Exception $e) {
-
+    echo $e->getMessage();
+    exit;
 }
 
 // Initialising "infinity" array and pointer for it
